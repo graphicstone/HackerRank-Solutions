@@ -16,16 +16,11 @@ int main() {
     }
     for(int i=0; i<100; i++)
     {
-        int flag=0;
-        for(int j=0; j<n; j++)
-        {
-            if(i == arr[j])
-            {
-                flag++;
-            }
-        } 
-        st[c] = flag;
-        c++;
+        st[i] = 0;
+    }
+    for(int i=0; i<n; i++)
+    {
+        st[arr[i]]++;
     }
     for(int i=0; i<100; i++)
     {
