@@ -9,33 +9,27 @@ using namespace std;
 int main() {
     int n, c=0;
     cin>>n;
-    long arr[n], st[100], count[n];
+    int arr[n], st[100], count[n];
     for(int i=0; i<n; i++)
     {
         cin>>arr[i];
     }
     for(int i=0; i<100; i++)
     {
-        int flag=0;
-        for(int j=0; j<n; j++)
-        {
-            if(i == arr[j])
-            {
-                flag++;
-            }
-        } 
-        st[c] = flag;
-        c++;
+        st[i] = 0;
     }
-    c = 0;
-    for(int i=0; i<100; i++)
+    for(int i=0; i<n; i++)
     {
-        while(st[i] > 0)
-        {
-            count[c] = i;
-            c++;
-            st[i]--;
-        } 
+        st[arr[i]]++;
+    }
+    for(int i=1; i<100; i++)
+    {
+        st[i] = st[i] + st[i-1];
+    }
+    for(int i=n-1; i>=0; i--)
+    {
+        count[st[arr[i]] - 1] = arr[i];
+        st[arr[i]]--;
     }
     for(int i=0; i<n; i++)
     {
