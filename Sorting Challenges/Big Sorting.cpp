@@ -10,11 +10,11 @@
 using namespace std;
     bool func(string i, string j)
     {
-        int n=i.length();
-        int m=j.length();
-        if(n==m)
-            return (i<j);
-        return n<m;   
+        i.length();
+        j.length();
+        if(i.length==j.length)
+            return (i.length<j.length);
+        return i.length<j.length;   
     }
 int main(void) 
 {
